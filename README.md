@@ -1,0 +1,2 @@
+# OSX Defaults
+A place to centralize the great work [@mathiasbynens](http://github.com/mathiasbynens/dotfiles/blob/master/.osx) did gathering and foster a community around finding and documenting OSX Default configuation from the command-line.
