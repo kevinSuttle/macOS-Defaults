@@ -9,3 +9,5 @@ Open up your command line and type the following:
 Just want the values for a specific application? 
 
 `defaults read -app iTerm`
+
+*(Source: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/defaults.1.html)*
