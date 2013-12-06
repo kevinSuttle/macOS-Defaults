@@ -160,7 +160,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 5000
+defaults write com.apple.screensaver askForPasswordDelay -int 300
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
