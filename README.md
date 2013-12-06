@@ -16,4 +16,4 @@ defaults read -app iTerm
 ```
 
 Unsure of what you can modify or which commands to use?
-Check out [REFERENCE.md](https://github.com/kevinSuttle/OSXDefaults/blob/master/REFERENCE.MD).
+Check out [REFERENCE.md](https://github.com/kevinSuttle/OSXDefaults/blob/master/REFERENCE.md).
