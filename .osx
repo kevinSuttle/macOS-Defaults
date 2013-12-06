@@ -30,7 +30,10 @@ defaults write com.apple.menuextra.battery ShowTime -string "YES"
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Set highlight color to Graphite
-defaults write NSGlobalDomain AppleHighlightColor -string "Graphite"
+defaults write NSGlobalDomain AppleHighlightColor -string "0.780400 0.815700 0.858800"
+
+# Set UI Chrome Appearance to Graphite
+defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
