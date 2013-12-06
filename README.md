@@ -15,4 +15,5 @@ Just want the values for a specific application? No problem. Here's an example:
 defaults read -app iTerm
 ```
 
-Source: [Mac Developer Library](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/defaults.1.html)
+Unsure of what you can modify or which commands to use?
+Check out [REFERENCE.md](https://github.com/kevinSuttle/OSXDefaults/blob/master/REFERENCE.MD).
