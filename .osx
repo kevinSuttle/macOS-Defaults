@@ -524,11 +524,20 @@ defaults write com.irradiatedsoftware.Cinch StartAtLogin -bool true
 # Don’t show the preferences window on next start
 defaults write com.irradiatedsoftware.Cinch ShowPrefsOnNextStart -bool false
 
+
+###############################################################################
+# iBooks                                                                      #
+###############################################################################
+
+# Show debug menu in iBooks
+defaults write com.apple.iBooksX BKShowDebugMenu -boolean true
+
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dock" "Finder" "Mail" "Messages" "Safari" "Cinch" "SystemUIServer" "Terminal"; do
+for app in "Dock" "Finder" "Mail" "Messages" "Safari" "Cinch" "SystemUIServer" "Terminal" "iBooks"; do
 	killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
