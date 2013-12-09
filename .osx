@@ -22,12 +22,21 @@ sudo pmset -a standbydelay 86400
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Menu bar: keep transparency
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+
+# Menu bar: switch to dark menu bar in full screen mode 
+defaults write -g NSFullScreenDarkMenu -bool true
+
 # Menu bar: show remaining battery time (on pre-10.8); hide percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 # Menu bar: hide the useless Menu bar icons
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+# Menu bar: Ensure clock is digital
+defaults write com.apple.menuextra.clock IsAnalog -bool false
 
 # Set highlight color to Graphite
 defaults write NSGlobalDomain AppleHighlightColor -string "0.780400 0.815700 0.858800"
