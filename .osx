@@ -673,13 +673,22 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 # Hide the app in the background if it’s not the front-most window
 defaults write com.twitter.twitter-mac HideInBackground -bool true
 
+
+###############################################################################
+# iBooks                                                                      #
+###############################################################################
+
+# Show debug menu in iBooks
+defaults write com.apple.iBooksX BKShowDebugMenu -boolean true
+
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" \
 	"Messages" "Safari" "SizeUp" "SystemUIServer" "Terminal" "Transmission" \
-	"Twitter" "iCal"; do
+	"Twitter" "iCal" "iBooks"; do
 	killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
