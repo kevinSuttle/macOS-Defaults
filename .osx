@@ -25,15 +25,19 @@ sudo nvram SystemAudioVolume=" "
 # Menu bar: keep transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
-# Menu bar: hide the Time Machine, Volume, User, Bluetooth, and Airport icons
+# Menu bar hide the Time Machine, Volume, User, Bluetooth, and Airport icons by default
+## 1st command
 defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array \
 	"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
 	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
 	"/System/Library/CoreServices/Menu Extras/User.menu" \
     "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-	"/System/Library/CoreServices/Menu Extras/Airport.menu"
+	"/System/Library/CoreServices/Menu Extras/AirPort.menu"
 
-# Menu bar: switch to dark menu bar in full screen mode 
+## 2nd command
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+# Menu bar: switch to dark menu bar in full screen mode
 defaults write -g NSFullScreenDarkMenu -bool true
 
 # Menu bar: show remaining battery time (on pre-10.8); hide percentage
