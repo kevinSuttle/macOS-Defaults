@@ -6,6 +6,7 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -558,10 +559,18 @@ defaults write com.apple.iBooksX BKShowDebugMenu -boolean true
 
 
 ###############################################################################
+# Xcode                                                                      #
+###############################################################################
+
+# Enable Mac developer mode (keep password entry to a minimum for Xcode an Instruments)
+/usr/sbin/DevToolsSecurity -enable
+
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dock" "Finder" "iBooks" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" "Terminal"; do
+for app in "Dock" "Finder" "iBooks" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" "Terminal", "Xcode"; do
 	killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
