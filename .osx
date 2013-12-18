@@ -152,6 +152,12 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
+# Disable the CAPS LOCK key
+/usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.1452-610-0 array" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
+/usr/libexec/PlistBuddy -c "Add :com.apple.keyboard.modifiermapping.1452-610-0: dict" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
+/usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.1452-610-0:0:HIDKeyboardModifierMappingDst integer -1" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
+/usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.1452-610-0:0:HIDKeyboardModifierMappingSrc integer 0" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
+
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
