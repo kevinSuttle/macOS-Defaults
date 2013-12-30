@@ -38,6 +38,9 @@ defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoL
 ## 2nd command
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
+# Menu bar: Hide AirPlay source lists
+defaults write com.apple.airplay showInMenuBarIfPresent -bool false
+
 # Menu bar: switch to dark menu bar in full screen mode
 defaults write -g NSFullScreenDarkMenu -bool true
 
