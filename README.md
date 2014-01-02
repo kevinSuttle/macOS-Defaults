@@ -5,8 +5,8 @@ A place to centralize the great work [@mathiasbynens](http://mths.be/osx) did ga
 ## Repo configuration
 Note: There are 2 branches.
 
-1. Master: Reflects http://mths.be/osx at all times. 
-2. My personal preferences and settings.
+1. `master`: Reflects http://mths.be/osx at all times. 
+2. `suttle`: My personal preferences and settings.
 
 
 ## Executing the .osx file
