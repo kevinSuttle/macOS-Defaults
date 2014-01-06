@@ -334,6 +334,9 @@ defaults write com.apple.dock persistent-apps -array
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
+# Don't bounce dock icons
+defaults write com.apple.dock no-bouncing -bool true
+
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
