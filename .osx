@@ -162,8 +162,6 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 /usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.1452-610-0:0:HIDKeyboardModifierMappingSrc integer 0" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
 
 # Set language and text formats
-# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
-# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
 defaults write NSGlobalDomain AppleLanguages -array "en" "us"
 defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
@@ -295,12 +293,12 @@ chflags nohidden ~/Library
 
 # Expand certain File Info panes:
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-  Comments -bool false \
-  General -bool true \
-  OpenWith -bool true \
-  MetaData -bool false \
-  Name -bool false \
-  Privileges -bool true \
+Comments -bool false \
+General -bool true \
+OpenWith -bool true \
+MetaData -bool false \
+Name -bool false \
+Privileges -bool true \
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -311,6 +309,9 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # Set the icon size of Dock items to 64 pixels
 defaults write com.apple.dock tilesize -int 64
+
+# Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
@@ -353,18 +354,18 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Make Dock more transparent
+defaults write com.apple.dock hide-mirror -bool true
+
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
-
-# Add iOS Simulator to Launchpad
-sudo ln -sf /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app /Applications/iOS\ Simulator.app
 
 # Add a spacer to the left side of the Dock (where the applications are)
 defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Hot corners
 ## Possible values:
-##  0: no-op
+##  0: (Nothing)
 ##  2: Mission Control
 ##  3: Show application windows
 ##  4: Desktop
@@ -450,22 +451,22 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 
 # Change indexing order and disable some file types
 defaults write com.apple.spotlight orderedItems -array \
-	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
-	'{"enabled" = 1;"name" = "PDF";}' \
-	'{"enabled" = 1;"name" = "FONTS";}' \
-	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
-	'{"enabled" = 0;"name" = "MESSAGES";}' \
-	'{"enabled" = 0;"name" = "CONTACT";}' \
-	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
-	'{"enabled" = 0;"name" = "IMAGES";}' \
-	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
-	'{"enabled" = 0;"name" = "MUSIC";}' \
-	'{"enabled" = 0;"name" = "MOVIES";}' \
-	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-	'{"enabled" = 0;"name" = "SOURCE";}'
+'{"enabled" = 1;"name" = "APPLICATIONS";}' \
+'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+'{"enabled" = 1;"name" = "DIRECTORIES";}' \
+'{"enabled" = 1;"name" = "PDF";}' \
+'{"enabled" = 1;"name" = "FONTS";}' \
+'{"enabled" = 0;"name" = "DOCUMENTS";}' \
+'{"enabled" = 0;"name" = "MESSAGES";}' \
+'{"enabled" = 0;"name" = "CONTACT";}' \
+'{"enabled" = 0;"name" = "EVENT_TODO";}' \
+'{"enabled" = 0;"name" = "IMAGES";}' \
+'{"enabled" = 0;"name" = "BOOKMARKS";}' \
+'{"enabled" = 0;"name" = "MUSIC";}' \
+'{"enabled" = 0;"name" = "MOVIES";}' \
+'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+'{"enabled" = 0;"name" = "SOURCE";}'
 
 # Load new settings before rebuilding the index
 killall mds > /dev/null 2>&1
