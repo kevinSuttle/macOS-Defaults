@@ -67,9 +67,6 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
-# Disable opening and closing window animations
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
-
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
@@ -163,11 +160,6 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 /usr/libexec/PlistBuddy -c "Add :com.apple.keyboard.modifiermapping.1452-610-0: dict" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
 /usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.1452-610-0:0:HIDKeyboardModifierMappingDst integer -1" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
 /usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.1452-610-0:0:HIDKeyboardModifierMappingSrc integer 0" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
-
-# Automatically illuminate built-in MacBook keyboard in low light
-defaults write com.apple.BezelServices kDim -bool true
-# Turn off keyboard illumination when computer is not used for 5 minutes
-defaults write com.apple.BezelServices kDimTime -int 300
 
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
