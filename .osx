@@ -27,6 +27,9 @@ sudo nvram SystemAudioVolume=" "
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
+# Set high contrast mode in Yosemite
+defaults write com.apple.universalaccess increaseContrast -bool true
+
 # Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
   defaults write "${domain}" dontAutoLoad -array \
@@ -327,6 +330,9 @@ defaults write com.apple.dock persistent-apps -array ""
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
+# Don't bounce icons in the Dock
+defaults write com.apple.dock no-bouncing -bool true
+
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
@@ -402,7 +408,6 @@ defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 # Press Tab to highlight each item on a web page
 defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
-
 
 # Show the full URL in the address bar (note: this still hides the scheme)
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
@@ -555,6 +560,15 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Allow installing user scripts via GitHub Gist or Userscripts.org
 defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
 defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
+
+###############################################################################
+# Archive utility                                                             #
+###############################################################################
+
+# Move archive files to trash after expansion
+# Delete directly: "/dev/null"
+# Leave alone (default) "."
+defaults write com.apple.archiveutility dearchive-move-after -string "~/.Trash"
 
 ###############################################################################
 # Kill affected applications                                                  #
