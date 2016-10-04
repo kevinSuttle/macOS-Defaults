@@ -17,4 +17,4 @@ When setting up a new Mac, you may want to set some sensible macOS defaults:
 
 ## Reference
 Unsure of what you can modify or which commands to use?
-Check out [REFERENCE.md](https://github.com/kevinSuttle/OSXDefaults/blob/master/REFERENCE.md).
+Check out [REFERENCE.md](REFERENCE.md).
