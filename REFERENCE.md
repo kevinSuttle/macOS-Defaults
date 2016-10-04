@@ -1,4 +1,4 @@
-# OSX Default Values Command Reference
+# macOS Default Values Command Reference
 
 ## chflags
 change file flags
